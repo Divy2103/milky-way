@@ -1,8 +1,8 @@
 import { NextResponse } from "next/server";
 import User from "../../../../database/schema/User";
 import bcrypt from "bcrypt";
-import { generateToken, verifyToken } from "@/utils/token";
-import sendEmail from "@/utils/sendEmail";
+import { generateToken, verifyToken } from "../../../../utils/token";
+import sendEmail from "../../../../utils/sendEmail";
 
 const BASE_URL = process.env.NEXTAUTH_URL;
 

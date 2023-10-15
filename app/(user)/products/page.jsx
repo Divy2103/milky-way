@@ -13,15 +13,15 @@ export default async function ProductPage() {
   const products = await getData();
 
   return (
-    <div className="bg-white my-7">
-      <div className="mx-auto max-w-7xl overflow-hidden sm:px-6 lg:px-8">
+    <div className="my-7">
+      <div className=" mx-5 sm:mx-auto max-w-7xl overflow-hidden sm:px-6 lg:px-8">
         <h2 className="sr-only">Products</h2>
 
-        <div className="-mx-px grid grid-cols-2 border-l border-gray-200 sm:mx-0 md:grid-cols-3 lg:grid-cols-4">
+        <div className="-mx-px grid grid-cols-2 gap-4 border-l border-gray-200 sm:mx-0 md:grid-cols-3 lg:grid-cols-4">
           {products.map((product) => (
             <div
               key={product.id}
-              className="group relative border-r border-y border-gray-200 p-4 sm:p-6"
+              className="group shadow-md rounded-xl relative border-r border-y border-gray-200 p-4 sm:p-6"
             >
               <div className="aspect-w-1 aspect-h-1 overflow-hidden rounded-lg bg-gray-200 group-hover:opacity-75">
                 <Image

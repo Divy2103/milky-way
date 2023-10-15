@@ -17,7 +17,7 @@ export default function AddProduct() {
     e.preventDefault();
     const formData = new FormData(e.target);
     bulletPoints.forEach((bulletPoint, index) => {
-      formData.append(`bulletPoint`, bulletPoint);
+      formData.append(`bulletPoints`, bulletPoint);
     });
 
     const res = await fetch("/api/inventory", {
@@ -27,7 +27,9 @@ export default function AddProduct() {
     console.log(res);
     const response = await res.json();
     console.log(response);
+    toast.success("Product added successfully");
     router.push("/admin/products");
+    router.refresh();
   };
 
   const getCategory = async () => {

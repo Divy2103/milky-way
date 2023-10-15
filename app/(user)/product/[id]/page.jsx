@@ -2,6 +2,7 @@ import Image from "next/image";
 import Product from "../.../../../../../database/schema/Product";
 import connect from "../../../../database/connection";
 import AddToCart from "../../../../components/AddToCart";
+import { MinusIcon } from "@heroicons/react/24/solid";
 
 const getProduct = async (id) => {
   await connect();
@@ -13,7 +14,7 @@ export default async function ProductPage({ params: { id } }) {
   const product = await getProduct(id);
 
   return (
-    <div className="bg-white">
+    <div className="">
       <main className="mx-auto max-w-7xl sm:px-6 sm:pt-16 lg:px-8">
         <div className="mx-auto max-w-2xl lg:max-w-none">
           <div className="lg:grid lg:grid-cols-2 lg:items-start lg:gap-x-8">
@@ -64,7 +65,8 @@ export default async function ProductPage({ params: { id } }) {
                 <ul>
                   {product.bulletPoints.map((point) => (
                     <li key={point} className="flex items-center">
-                      {point}
+                      {/* <MinusIcon className="h-4 w-4 text-black text-lg mx-2 my-2"/> {point}- */}
+                      &bull; {point}
                     </li>
                   ))}
                 </ul>

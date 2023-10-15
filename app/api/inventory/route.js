@@ -36,7 +36,7 @@ const deleteImage = async (name) => {
 export async function POST(request, response) {
   try {
     const data = await request.formData();
-
+    console.log(data.getAll("bulletPoints"));
     const name = data.get("name");
     const category = data.get("category");
     const image = data.get("image");
@@ -45,7 +45,7 @@ export async function POST(request, response) {
     const sellingPrice = data.get("sellingPrice");
     const bulletPoints = data.getAll("bulletPoints");
 
-    console.log({ name, category, image, description, mrp, sellingPrice });
+    // console.log({ name, category, image, description, mrp, sellingPrice,bulletPoints });
 
     if (
       !name ||

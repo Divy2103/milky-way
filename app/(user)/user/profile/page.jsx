@@ -4,8 +4,10 @@ import ChangePassword from "../../../../components/ChangePassword";
 import countries from "../../../../static/countries.json";
 import { useSession } from "next-auth/react";
 import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 
 export default function Profile() {
+  const router = useRouter()
   const { data: session, status } = useSession();
 
   const [country, setCountry] = useState(session?.user?.country || "India");
@@ -32,6 +34,7 @@ export default function Profile() {
       return;
     }
     toast.success("Profile updated successfully");
+    router.push('/')
   };
 
   useEffect(() => {
@@ -208,8 +211,9 @@ export default function Profile() {
                     id="country"
                     name="country"
                     autoComplete="country-name"
+                    disabled={true}
                     value={country}
-                    onChange={(e) => setCountry(e.target.value)}
+                    // onChange={(e) => setCountry(e.target.value)}
                     className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-blue-600 sm:max-w-xs sm:text-sm sm:leading-6"
                   >
                     {countries.countries.map((country, i) => (
