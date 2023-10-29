@@ -11,6 +11,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Cart from "./Cart";
+import Avatar from "react-avatar";
 
 const navigation = [
   { name: "Home", href: "/" },
@@ -116,6 +117,7 @@ export default function Header() {
                               height={64}
                               className="h-8 w-8 rounded-full"
                             />
+                            {/* <Avatar size="40" round name={`${session?.user?.firstName ?? session?.user?.email}`} className="rounded-full h-8 w-8" /> */}
                           </Menu.Button>
                         </div>
                         <Transition
